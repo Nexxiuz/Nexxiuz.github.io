@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="formulario.css" />
+</head>
+<body>
+    <div class="social-menu" style="position: fixed; right: 20px; top: 50%; transform: translateY(-50%); z-index: 1000; display: flex; flex-direction: column; gap: 10px;">
+        <a href="#" class="social-icon" style="background: #3b5998; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: transform 0.3s;">
+            <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="#" class="social-icon" style="background: #1da1f2; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: transform 0.3s;">
+            <i class="fa-brands fa-twitter"></i>
+        </a>
+        <a href="#" class="social-icon" style="background: #c13584; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: transform 0.3s;">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="#" class="social-icon" style="background: #ff0000; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: transform 0.3s;">
+            <i class="fa-brands fa-youtube"></i>
+        </a>
+        <a href="#" class="social-icon" style="background: #25d366; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: transform 0.3s;">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+    <header>
+        
+		<div class="container-hero">
+			<div class="container hero">
+
+				<div class="container-logo">
+					<i class="fa-solid fa-mug-hot"></i>
+					<h1 class="logo"><a href="/">Baristas</a></h1>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-navbar">
+			<nav class="navbar container">
+				<i class="fa-solid fa-bars"></i>
+				<ul class="menu">
+					<li><a href="index.html">Inicio</a></li>
+					<li><a href="Galeria.html">Galeria</a></li>
+					<li><a href="contactos.html">Contactos</a></li>
+					<li><a href="Formmulario.html">Formulario</a></li>
+   
+
+				</ul>
+
+			</nav>
+		</div>
+	</header>
+<div class="container" style="max-width: 800px; margin: 20px auto; padding: 20px;">
+    <h2 style="text-align: center; color: #333; margin-bottom: 30px;">Formulario de Reseña</h2>
+    
+    <form style="display: flex; flex-direction: column; gap: 20px;">
+        <div class="form-group">
+            <label>1. ¿Cómo calificaría la calidad de nuestro café?</label>
+            <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 5px;">
+                <label><input type="radio" name="calidad" value="5" required> Excelente</label>
+                <label><input type="radio" name="calidad" value="4"> Muy Bueno</label>
+                <label><input type="radio" name="calidad" value="3"> Bueno</label>
+                <label><input type="radio" name="calidad" value="2"> Regular</label>
+                <label><input type="radio" name="calidad" value="1"> Malo</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>2. ¿Cómo fue el servicio al cliente?</label>
+            <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 5px;">
+                <label><input type="radio" name="servicio" value="5" required> Excelente</label>
+                <label><input type="radio" name="servicio" value="4"> Muy Bueno</label>
+                <label><input type="radio" name="servicio" value="3"> Bueno</label>
+                <label><input type="radio" name="servicio" value="2"> Regular</label>
+                <label><input type="radio" name="servicio" value="1"> Malo</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>3. ¿Qué le pareció la limpieza del local?</label>
+            <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 5px;">
+                <label><input type="radio" name="limpieza" value="5" required> Excelente</label>
+                <label><input type="radio" name="limpieza" value="4"> Muy Buena</label>
+                <label><input type="radio" name="limpieza" value="3"> Buena</label>
+                <label><input type="radio" name="limpieza" value="2"> Regular</label>
+                <label><input type="radio" name="limpieza" value="1"> Mala</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>4. ¿Cómo calificaría el ambiente del local?</label>
+            <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 5px;">
+                <label><input type="radio" name="ambiente" value="5" required> Excelente</label>
+                <label><input type="radio" name="ambiente" value="4"> Muy Bueno</label>
+                <label><input type="radio" name="ambiente" value="3"> Bueno</label>
+                <label><input type="radio" name="ambiente" value="2"> Regular</label>
+                <label><input type="radio" name="ambiente" value="1"> Malo</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>5. ¿Qué le parecieron los precios?</label>
+            <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 5px;">
+                <label><input type="radio" name="precio" value="5" required> Muy Accesibles</label>
+                <label><input type="radio" name="precio" value="4"> Accesibles</label>
+                <label><input type="radio" name="precio" value="3"> Justos</label>
+                <label><input type="radio" name="precio" value="2"> Algo Caros</label>
+                <label><input type="radio" name="precio" value="1"> Muy Caros</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>6. ¿Cómo fue el tiempo de espera?</label>
+            <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 5px;">
+                <label><input type="radio" name="tiempo" value="5" required> Muy Rápido</label>
+                <label><input type="radio" name="tiempo" value="4"> Rápido</label>
+                <label><input type="radio" name="tiempo" value="3"> Normal</label>
+                <label><input type="radio" name="tiempo" value="2"> Algo Lento</label>
+                <label><input type="radio" name="tiempo" value="1"> Muy Lento</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>7. ¿Recomendaría nuestro café a otros?</label>
+            <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 5px;">
+                <label><input type="radio" name="recomendacion" value="5" required> Definitivamente Sí</label>
+                <label><input type="radio" name="recomendacion" value="4"> Probablemente Sí</label>
+                <label><input type="radio" name="recomendacion" value="3"> Tal vez</label>
+                <label><input type="radio" name="recomendacion" value="2"> Probablemente No</label>
+                <label><input type="radio" name="recomendacion" value="1"> Definitivamente No</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>8. ¿Con qué frecuencia nos visita?</label>
+            <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 5px;">
+                <label><input type="radio" name="frecuencia" value="5" required> Diariamente</label>
+                <label><input type="radio" name="frecuencia" value="4"> Semanalmente</label>
+                <label><input type="radio" name="frecuencia" value="3"> Mensualmente</label>
+                <label><input type="radio" name="frecuencia" value="2"> Ocasionalmente</label>
+                <label><input type="radio" name="frecuencia" value="1"> Primera vez</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="comentarios">Comentarios adicionales:</label>
+            <textarea id="comentarios" rows="4" style="width: 100%; padding: 8px; margin-top: 5px; resize: vertical;"></textarea>
+        </div>
+
+        <button type="submit" style="background-color: #d2b495; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">
+            Enviar Reseña
+        </button>
+    </form>
+</div>
+
+
+<script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
+<footer class="footer">
+    <div class="container container-footer">
+        <div class="menu-footer">
+            <div class="contact-info">
+                <p class="title-footer">Información de Contacto</p>
+                <ul>
+                    <li>
+                        Dirección: 71 Pennington Lane Vernon Rockville, CT
+                        06066
+                    </li>
+                    <li>Teléfono: 123-456-7890</li>
+                    <li>Fax: 55555300</li>
+                    <li>EmaiL: baristas@support.com</li>
+                </ul>
+                <div class="social-icons">
+                    <span class="facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </span>
+                    <span class="twitter">
+                        <i class="fa-brands fa-twitter"></i>
+                    </span>
+                    <span class="youtube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </span>
+                    <span class="pinterest">
+                        <i class="fa-brands fa-pinterest-p"></i>
+                    </span>
+                    <span class="instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </span>
+                </div>
+            </div>
+
+            <div class="information">
+                <p class="title-footer">Información</p>
+                <ul>
+                    <li><a href="#">Acerca de Nosotros</a></li>
+                    <li><a href="#">Información Delivery</a></li>
+                    <li><a href="#">Politicas de Privacidad</a></li>
+                    <li><a href="#">Términos y condiciones</a></li>
+                    <li><a href="#">Contactános</a></li>
+                </ul>
+            </div>
+
+            <div class="my-account">
+                <p class="title-footer">Mi cuenta</p>
+
+                <ul>
+                    <li><a href="#">Mi cuenta</a></li>
+                    <li><a href="#">Historial de ordenes</a></li>
+                    <li><a href="#">Lista de deseos</a></li>
+                    <li><a href="#">Boletín</a></li>
+                    <li><a href="#">Reembolsos</a></li>
+                </ul>
+            </div>
+
+            <div class="newsletter">
+                <p class="title-footer">Boletín informativo</p>
+
+                <div class="content">
+                    <p>
+                        Siguenos en la pagina cada mes agregamos una variedad de cosas, actualizamos la lista de cafes para que tengas una gran variedad de seleccion de cafes 
+                    </p>
+                    <input type="email" placeholder="Ingresa el correo aquí...">
+                </div>
+            </div>
+        </div>
+
+        
+            <img src="img/payment.png" alt="Pagos">
+        </div>
+    </div>
+</footer>
+<script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
+</body>
+</html>

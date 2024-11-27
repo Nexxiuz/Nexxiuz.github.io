@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="social-menu" style="position: fixed; right: 20px; top: 50%; transform: translateY(-50%); z-index: 1000; display: flex; flex-direction: column; gap: 10px;">
+        <a href="#" class="social-icon" style="background: #3b5998; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: transform 0.3s;">
+            <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="#" class="social-icon" style="background: #1da1f2; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: transform 0.3s;">
+            <i class="fa-brands fa-twitter"></i>
+        </a>
+        <a href="#" class="social-icon" style="background: #c13584; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: transform 0.3s;">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="#" class="social-icon" style="background: #ff0000; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: transform 0.3s;">
+            <i class="fa-brands fa-youtube"></i>
+        </a>
+        <a href="#" class="social-icon" style="background: #25d366; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: transform 0.3s;">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <div class="slider" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <div class="slides-container" style="position: relative; width: 100%; max-width: 800px;">
+            <button class="slider-btn prev" onclick="changeSlide(-1)" style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); z-index: 2; padding: 15px 20px; font-size: 20px;">&#10094;</button>
+            <button class="slider-btn next" onclick="changeSlide(1)" style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); z-index: 2; padding: 15px 20px; font-size: 20px;">&#10095;</button>
+            
+            <div class="slides" id="slides">
+                <div class="slide">
+                    <img src="img/cafe1.jpg" alt="Cafetería 1" style="width: 100%; height: 500px; object-fit: cover;"/>
+                    <div class="slide-content">
+                        <h2>Bienvenidos a Baristas</h2>
+                        <p>El mejor café de la ciudad</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="img/cafe2.jpg" alt="Cafetería 2" style="width: 100%; height: 500px; object-fit: cover;"/>
+                    <div class="slide-content">
+                        <h2>Ambiente Acogedor</h2>
+                        <p>El lugar perfecto para relajarte</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="img/cafe3.jpg" alt="Cafetería 3" style="width: 100%; height: 500px; object-fit: cover;"/>
+                    <div class="slide-content">
+                        <h2>Café de Especialidad</h2>
+                        <p>Los mejores granos seleccionados</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="img/cafe4.jpg" alt="Cafetería 4" style="width: 100%; height: 500px; object-fit: cover;"/>
+                    <div class="slide-content">
+                        <h2>Postres Artesanales</h2>
+                        <p>El complemento perfecto para tu café</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slider-nav">
+            <button class="slider-nav-btn active" onclick="currentSlide(1)" style="width: 15px; height: 15px;"></button>
+            <button class="slider-nav-btn" onclick="currentSlide(2)" style="width: 15px; height: 15px;"></button>
+            <button class="slider-nav-btn" onclick="currentSlide(3)" style="width: 15px; height: 15px;"></button>
+            <button class="slider-nav-btn" onclick="currentSlide(4)" style="width: 15px; height: 15px;"></button>
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("slider-nav-btn");
+            
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
+
+        setInterval(function() {
+            slideIndex++;
+            showSlides(slideIndex);
+        }, 5000);
+    </script>
+    <header>
+        <div class="container-hero">
+            <div class="container hero">
+                <div class="container-logo">
+                    <i class="fa-solid fa-mug-hot"></i>
+                    <h1 class="logo"><a href="/">Baristas</a></h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-navbar">
+            <nav class="navbar container">
+                <i class="fa-solid fa-bars"></i>
+                <ul class="menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="Galeria.html">Galeria</a></li>
+                    <li><a href="contactos.html">Contactos</a></li>
+                    <li><a href="formmulario.html">Formmulario</a></li>
+                </ul>
+
+                
+            </nav>
+        </div>
+    </header>
+    <section class="container top-products">
+        <h1 class="heading-1">Mejores Productos</h1>
+
+        <div class="container-options">
+            <span class="active">Destacados</span>
+            <span>Más recientes</span>
+            <span>Mejores Vendidos</span>
+        </div>
+
+        <div class="container-products">
+            <!-- Producto 1 -->
+            <div class="card-product">
+                <div class="container-img">
+                    <img src="img/cafe-irish.jpg" alt="Cafe Irish" />
+                    <span class="discount">-13%</span>
+                    <div class="button-group">
+                        <span>
+                            <i class="fa-regular fa-eye"></i>
+                        </span>
+                        <span>
+                            <i class="fa-regular fa-heart"></i>
+                        </span>
+                        <span>
+                            <i class="fa-solid fa-code-compare"></i>
+                        </span>
+                    </div>
+                    <div class="overlay">
+                        <span>Café Irish</span>
+                    </div>
+                </div>
+                <div class="content-card-product">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <h3>Cafe Irish</h3>
+                    <span class="add-cart">
+                        <i class="fa-solid fa-basket-shopping"></i>
+                    </span>
+                    <p class="price">$4.60 <span>$5.30</span></p>
+                </div>
+            </div>
+            <!-- Producto 2 -->
+            <div class="card-product">
+                <div class="container-img">
+                    <img
+                        src="img/cafe-ingles.jpg"
+                        alt="Cafe incafe-ingles.jpg"
+                    />
+                    <span class="discount">-22%</span>
+                    <div class="button-group">
+                        <span>
+                            <i class="fa-regular fa-eye"></i>
+                        </span>
+                        <span>
+                            <i class="fa-regular fa-heart"></i>
+                        </span>
+                        <span>
+                            <i class="fa-solid fa-code-compare"></i>
+                        </span>
+                    </div>
+                    <div class="overlay">
+                        <span>Café Inglés</span>
+                    </div>
+                </div>
+                <div class="content-card-product">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <h3>Cafe Inglés</h3>
+                    <span class="add-cart">
+                        <i class="fa-solid fa-basket-shopping"></i>
+                    </span>
+                    <p class="price">$5.70 <span>$7.30</span></p>
+                </div>
+            </div>
+            <!--  -->
+            <div class="card-product">
+                <div class="container-img">
+                    <img
+                        src="img/cafe-australiano.jpg"
+                        alt="Cafe Australiano"
+                    />
+                    <div class="button-group">
+                        <span>
+                            <i class="fa-regular fa-eye"></i>
+                        </span>
+                        <span>
+                            <i class="fa-regular fa-heart"></i>
+                        </span>
+                        <span>
+                            <i class="fa-solid fa-code-compare"></i>
+                        </span>
+                    </div>
+                    <div class="overlay">
+                        <span>Café Australiano</span>
+                    </div>
+                </div>
+                <div class="content-card-product">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h3>Cafe Australiano</h3>
+                    <span class="add-cart">
+                        <i class="fa-solid fa-basket-shopping"></i>
+                    </span>
+                    <p class="price">$3.20</p>
+                </div>
+            </div>
+            <!--  -->
+            <div class="card-product">
+                <div class="container-img">
+                    <img src="img/cafe-helado.jpg" alt="Cafe Helado" />
+                    <div class="button-group">
+                        <span>
+                            <i class="fa-regular fa-eye"></i>
+                        </span>
+                        <span>
+                            <i class="fa-regular fa-heart"></i>
+                        </span>
+                        <span>
+                            <i class="fa-solid fa-code-compare"></i>
+                        </span>
+                    </div>
+                    <div class="overlay">
+                        <span>Café Helado</span>
+                    </div>
+                </div>
+                <div class="content-card-product">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <h3>Cafe Helado</h3>
+                    <span class="add-cart">
+                        <i class="fa-solid fa-basket-shopping"></i>
+                    </span>
+                    <p class="price">$5.60</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer class="footer">
+        <div class="container container-footer">
+            <div class="menu-footer">
+                <div class="contact-info">
+                    <p class="title-footer">Información de Contacto</p>
+                    <ul>
+                        <li>
+                            Dirección: 71 Pennington Lane Vernon Rockville, CT
+                            06066
+                        </li>
+                        <li>Teléfono: 123-456-7890</li>
+                        <li>Fax: 55555300</li>
+                        <li>EmaiL: baristas@support.com</li>
+                    </ul>
+                    
+                </div>
+
+                <div class="information">
+                    <p class="title-footer">Información</p>
+                    <ul>
+                        <li><a href="#">Acerca de Nosotros</a></li>
+                        <li><a href="#">Información Delivery</a></li>
+                        <li><a href="#">Politicas de Privacidad</a></li>
+                        <li><a href="#">Términos y condiciones</a></li>
+                        <li><a href="#">Contactános</a></li>
+                    </ul>
+                </div>
+
+                <div class="my-account">
+                    <p class="title-footer">Mi cuenta</p>
+
+                    <ul>
+                        <li><a href="#">Mi cuenta</a></li>
+                        <li><a href="#">Historial de ordenes</a></li>
+                        <li><a href="#">Lista de deseos</a></li>
+                        <li><a href="#">Boletín</a></li>
+                        <li><a href="#">Reembolsos</a></li>
+                    </ul>
+                </div>
+
+                <div class="newsletter">
+                    <p class="title-footer">Boletín informativo</p>
+
+                    <div class="content">
+                        <p>
+                            Siguenos en la pagina cada mes agregamos una variedad de cosas, actualizamos la lista de cafes para que tengas una gran variedad de seleccion de cafes 
+                        </p>
+                        <input type="email" placeholder="Ingresa el correo aquí...">
+                        <button>Suscríbete</button>
+                    </div>
+                </div>
+            </div>
+                <img src="img/payment.png" alt="Pagos">
+            </div>
+        </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
+</body>
+</html>

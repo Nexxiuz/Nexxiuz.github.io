@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Baristas</title>
+	<link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+	<header>
+		<div class="container-hero">
+			<div class="container hero">
+				<div class="container-logo">
+					<i class="fa-solid fa-mug-hot"></i>
+					<h1 class="logo"><a href="/">Baristas</a></h1>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-navbar">
+			<nav class="navbar container">
+				<i class="fa-solid fa-bars"></i>
+				<ul class="menu">
+					<li><a href="#">Inicio</a></li>
+					<li><a href="Galeria.html">Galeria</a></li>
+					<li><a href="contactos.html">Contactos</a></li>
+					<li><a href="formmulario.html">Formulario</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<div class="social-menu"
+		style="position: fixed; right: 20px; top: 50%; transform: translateY(-50%); z-index: 1000; display: flex; flex-direction: column; gap: 10px;">
+		<a href="#" class="social-icon"
+			style="background: #3b5998; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: transform 0.3s;">
+			<i class="fa-brands fa-facebook-f"></i>
+		</a>
+		<a href="#" class="social-icon"
+			style="background: #1da1f2; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: transform 0.3s;">
+			<i class="fa-brands fa-twitter"></i>
+		</a>
+		<a href="#" class="social-icon"
+			style="background: #c13584; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: transform 0.3s;">
+			<i class="fa-brands fa-instagram"></i>
+		</a>
+		<a href="#" class="social-icon"
+			style="background: #ff0000; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: transform 0.3s;">
+			<i class="fa-brands fa-youtube"></i>
+		</a>
+		<a href="#" class="social-icon"
+			style="background: #25d366; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: transform 0.3s;">
+			<i class="fa-brands fa-whatsapp"></i>
+		</a>
+	</div>
+
+<div class="slider-wrapper"
+	style="display: flex; justify-content: center; align-items: center; gap: 20px; padding: 20px; box-sizing: border-box; width: 100%;">
+
+	<div class="slider"
+		style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 1000%;">
+		<div class="slides-container" style="position: relative; width: 1000%; max-width: 1200px;"> 
+			<button class="slider-btn prev" onclick="changeSlide(-1)"
+				style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); z-index: 2; padding: 15px 20px; font-size: 20px;">&#10094;</button>
+			<button class="slider-btn next" onclick="changeSlide(1)"
+				style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); z-index: 2; padding: 15px 20px; font-size: 20px;">&#10095;</button>
+
+			<div class="slides" id="slides">
+				<div class="slide">
+					<img src="img/cafe1.jpg" alt="Cafetería 1"
+						style="width: 100%; height: 700px; object-fit: cover;" /> 
+						<h2>Bienvenidos a Baristas</h2>
+						<p>El mejor café de la ciudad</p>
+					</div>
+				</div>
+				<div class="slide">
+					<img src="img/cafe2.jpg" alt="Cafetería 2"
+						style="width: 100%; height: 700px; object-fit: cover;" /> 
+					<div class="slide-content">
+						<h2>Ambiente Acogedor</h2>
+						<p>El lugar perfecto para relajarte</p>
+					</div>
+				</div>
+				<div class="slide">
+					<img src="img/cafe3.jpg" alt="Cafetería 3"
+						style="width: 100%; height: 700px; object-fit: cover;" /> 
+					<div class="slide-content">
+						<h2>Café de Especialidad</h2>
+						<p>Los mejores granos seleccionados</p>
+					</div>
+				</div>
+				<div class="slide">
+					<img src="img/cafe4.jpg" alt="Cafetería 4"
+						style="width: 100%; height: 700px; object-fit: cover;" /> 
+					<div class="slide-content">
+						<h2>Postres Artesanales</h2>
+						<p>El complemento perfecto para tu café</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="slider-nav" style="margin-top: 20px;">
+			<button class="slider-nav-btn active" onclick="currentSlide(1)"
+				style="width: 15px; height: 15px;"></button>
+			<button class="slider-nav-btn" onclick="currentSlide(2)" style="width: 15px; height: 15px;"></button>
+			<button class="slider-nav-btn" onclick="currentSlide(3)" style="width: 15px; height: 15px;"></button>
+			<button class="slider-nav-btn" onclick="currentSlide(4)" style="width: 15px; height: 15px;"></button>
+		</div>
+	</div>
+</div>
+
+	<script>
+		let slideIndex = 1;
+		showSlides(slideIndex);
+
+		function changeSlide(n) {
+			showSlides(slideIndex += n);
+		}
+
+		function currentSlide(n) {
+			showSlides(slideIndex = n);
+		}
+
+		function showSlides(n) {
+			let i;
+			let slides = document.getElementsByClassName("slide");
+			let dots = document.getElementsByClassName("slider-nav-btn");
+
+			if (n > slides.length) { slideIndex = 1 }
+			if (n < 1) { slideIndex = slides.length }
+
+			for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";
+			}
+			for (i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(" active", "");
+			}
+
+			slides[slideIndex - 1].style.display = "block";
+			dots[slideIndex - 1].className += " active";
+		}
+		setInterval(function () {
+			slideIndex++;
+			showSlides(slideIndex);
+		}, 5000);
+	</script>
+
+
+	<section class="banner">
+		<div class="content-banner">
+			<p>Descubre nuestro café</p>
+			<h2>¡Calidad que se siente <br> en cada sorbo!</h2>
+			<a href="#">Explorar nuestro menú</a>
+		</div>
+	</section>
+	<section class="about-cafeteria"></section>
+	<div class="container">
+		<div class="about-content">
+			<h2>Conoce nuestra Cafetería</h2>
+			<p>
+				En <strong>Baristas</strong>, nos dedicamos a ofrecer una experiencia única en cada taza de café.
+				Nuestro ambiente acogedor está diseñado para brindarte un espacio cómodo donde disfrutar de un café
+				excelente, acompañado de postres artesanales y un servicio excepcional.
+			</p>
+			<p>
+				Nos enorgullece trabajar con <strong>granos seleccionados de origen</strong>, asegurando calidad y
+				frescura en cada preparación. Ya sea un espresso intenso o un latte espumoso, cada bebida refleja
+				nuestra pasión por el café. Además, contamos con un <strong>menú de temporada</strong> que incluye
+				opciones veganas y sin gluten, perfectas para todos los gustos.
+			</p>
+			<a href="#menu" class="btn-learn-more">Descubre nuestro menú</a>
+		</div>
+	</div>
+	</section>
+	<main class="main-content">
+		<section class="container container-features">
+			<div class="card-feature">
+				<i class="fa-solid fa-plane-up"></i>
+				<div class="feature-content">
+					<span>Envío gratuito a nivel mundial</span>
+					<p>En pedido superior a $150</p>
+				</div>
+			</div>
+			<div class="card-feature">
+				<i class="fa-solid fa-wallet"></i>
+				<div class="feature-content">
+					<span>Contrareembolso</span>
+					<p>100% garantía de devolución de dinero</p>
+				</div>
+			</div>
+			<div class="card-feature">
+				<i class="fa-solid fa-gift"></i>
+				<div class="feature-content">
+					<span>Tarjeta regalo especial</span>
+					<p>Ofrece bonos especiales con regalo</p>
+				</div>
+			</div>
+			<div class="card-feature">
+				<i class="fa-solid fa-headset"></i>
+				<div class="feature-content">
+					<span>Servicio al cliente 24/7</span>
+					<p>LLámenos 24/7 al 123-456-7890</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="container top-categories">
+			<h1 class="heading-1">Mejores Categorías</h1>
+			<div class="container-categories">
+				<div class="card-category category-moca">
+					<p>Café moca</p>
+					<span>Ver más</span>
+				</div>
+				<div class="card-category category-expreso">
+					<p>Expreso Americano</p>
+					<span>Ver más</span>
+				</div>
+				<div class="card-category category-capuchino">
+					<p>Capuchino</p>
+					<span>Ver más</span>
+				</div>
+			</div>
+		</section>
+		<section class="container blogs">
+			<h1 class="heading-1">Últimos Blogs</h1>
+
+			<div class="container-blogs">
+				<div class="card-blog">
+					<div class="container-img">
+						<img src="img/blog-1.jpg" alt="Imagen Blog 1" />
+						<div class="button-group-blog">
+							<span>
+								<i class="fa-solid fa-magnifying-glass"></i>
+							</span>
+							<span>
+								<i class="fa-solid fa-link"></i>
+							</span>
+						</div>
+					</div>
+					<div class="content-blog">
+						<h3>ingredientes</h3>
+						<span>29 Noviembre 2022</span>
+						<p>
+							En nuestra cafetería utilizamos solo los ingredientes de la más alta calidad. Nuestro café
+							proviene de granos seleccionados de las mejores regiones productoras, tostados
+							artesanalmente
+							para resaltar sus notas únicas. Usamos leche fresca de granjas locales, chocolate premium
+							para nuestras bebidas especiales, jarabes naturales hechos en casa, y crema batida fresca.
+							Para nuestros postres, trabajamos con harina orgánica, mantequilla de primera calidad,
+							frutas frescas de temporada y cacao puro. Todos nuestros ingredientes son cuidadosamente
+							elegidos para garantizar el mejor sabor en cada taza y bocado.
+						</p>
+						<div class="btn-read-more">Leer más</div>
+					</div>
+				</div>
+				<div class="card-blog">
+					<div class="container-img">
+						<img src="img/blog-2.jpg" alt="Imagen Blog 2" />
+						<div class="button-group-blog">
+							<span>
+								<i class="fa-solid fa-magnifying-glass"></i>
+							</span>
+							<span>
+								<i class="fa-solid fa-link"></i>
+							</span>
+						</div>
+					</div>
+					<div class="content-blog">
+						<h3>Reseñas</h3>
+						<span>29 Noviembre 2022</span>
+						<p>
+							Nuestra cafetería es un verdadero tesoro culinario. El ambiente acogedor y el aroma del café
+							recién tostado crean una experiencia única. Los baristas son verdaderos artistas que
+							preparan cada bebida con precisión y cuidado. La selección de pasteles caseros es exquisita,
+							y el servicio atento hace que cada visita sea especial. Un lugar perfecto para disfrutar de
+							un momento de tranquilidad con un café excepcional.
+
+						</p>
+						<div class="btn-read-more">Leer más</div>
+					</div>
+				</div>
+				<div class="card-blog">
+					<div class="container-img">
+						<img src="img/blog-3.jpg" alt="Imagen Blog 3" />
+						<div class="button-group-blog">
+							<span>
+								<i class="fa-solid fa-magnifying-glass"></i>
+							</span>
+							<span>
+								<i class="fa-solid fa-link"></i>
+							</span>
+						</div>
+					</div>
+					<div class="content-blog">
+						<h3>Baristas</h3>
+						<span>29 Noviembre 2022</span>
+						<p>
+							Descubre nuestra acogedora cafetería, un rincón perfecto
+							para disfrutar del mejor café. Ofrecemos una selecta
+							variedad de granos premium, postres artesanales y un
+							ambiente tranquilo ideal para relajarte o trabajar.
+							Nuestros baristas expertos preparan cada bebida con
+							pasión y dedicación.
+						</p>
+						<div class="btn-read-more">Leer más</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<div class="container container-footer">
+			<div class="menu-footer">
+				<div class="contact-info">
+					<p class="title-footer">Información de Contacto</p>
+					<ul>
+						<li>
+							Dirección: 71 Pennington Lane Vernon Rockville, CT
+							06066
+						</li>
+						<li>Teléfono: 123-456-7890</li>
+						<li>Fax: 55555300</li>
+						<li>EmaiL: baristas@support.com</li>
+					</ul>
+					<div class="social-icons">
+						<span class="facebook">
+							<i class="fa-brands fa-facebook-f"></i>
+						</span>
+						<span class="twitter">
+							<i class="fa-brands fa-twitter"></i>
+						</span>
+						<span class="youtube">
+							<i class="fa-brands fa-youtube"></i>
+						</span>
+						<span class="pinterest">
+							<i class="fa-brands fa-pinterest-p"></i>
+						</span>
+						<span class="instagram">
+							<i class="fa-brands fa-instagram"></i>
+						</span>
+					</div>
+				</div>
+
+				<div class="information">
+					<p class="title-footer">Información</p>
+					<ul>
+						<li><a href="#">Acerca de Nosotros</a></li>
+						<li><a href="#">Información Delivery</a></li>
+						<li><a href="#">Politicas de Privacidad</a></li>
+						<li><a href="#">Términos y condiciones</a></li>
+						<li><a href="#">Contactános</a></li>
+					</ul>
+				</div>
+
+				<div class="my-account">
+					<p class="title-footer">Mi cuenta</p>
+
+					<ul>
+						<li><a href="#">Mi cuenta</a></li>
+						<li><a href="#">Historial de ordenes</a></li>
+						<li><a href="#">Lista de deseos</a></li>
+						<li><a href="#">Boletín</a></li>
+						<li><a href="#">Reembolsos</a></li>
+					</ul>
+				</div>
+
+				<div class="newsletter">
+					<p class="title-footer">Boletín informativo</p>
+
+					<div class="content">
+						<p>
+							Siguenos en la pagina cada mes agregamos una variedad de cosas, actualizamos la lista de
+							cafes para que tengas una gran variedad de seleccion de cafes
+						</p>
+						<input type="email" placeholder="Ingresa el correo aquí...">
+
+					</div>
+				</div>
+			</div>
+			<img src="img/payment.png" alt="Pagos">
+		</div>
+	</footer>
+	<script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
