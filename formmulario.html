@@ -152,6 +152,17 @@
             Enviar Reseña
         </button>
     </form>
+	<div id="thank-you-message" style="display: none; margin-top: 20px; font-size: 18px; color: green;">
+    Gracias por dar su opinión. ¡Vuelva pronto!
+</div>
+
+<script>
+    document.getElementById("feedback-form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Evita el envío predeterminado
+        document.getElementById("feedback-form").style.display = "none"; // Oculta el formulario
+        document.getElementById("thank-you-message").style.display = "block"; // Muestra el mensaje
+    });
+</script>
 </div>
 
 
